@@ -32,12 +32,21 @@ npm run build      # genera dist/ (incluye service worker y manifest PWA)
 npm run preview
 ```
 
+## Publicación (GitHub Pages)
+
+Cada push a la rama principal ejecuta `.github/workflows/deploy.yml`, que corre los
+tests, compila con `BASE_PATH=/<repo>/` y publica `dist/` en GitHub Pages:
+
+**https://haryta.github.io/movies/**
+
+Si el workflow no puede activar Pages solo, actívalo una vez en
+Settings → Pages → Source: **GitHub Actions**. `dist/404.html` es una copia de
+`index.html` para que las rutas de la SPA funcionen al recargar.
+
 ## Instalar en iPhone
 
-1. Publica `dist/` en cualquier hosting estático con HTTPS (Vercel, Netlify, Cloudflare Pages).
-   La app usa rutas de navegador, así que el hosting debe servir `index.html` para
-   cualquier ruta (Vercel y Netlify lo hacen por defecto para SPA).
-2. Abre la URL en Safari → Compartir → **Añadir a pantalla de inicio**.
+1. Abre la URL en Safari.
+2. Toca Compartir → **Añadir a pantalla de inicio**.
 3. Se abre a pantalla completa como una app nativa y funciona sin conexión
    (los videos sí necesitan internet).
 
