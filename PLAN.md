@@ -194,6 +194,12 @@ tests/
 
 ## 6. Fases de implementación
 
+> **Estado (12 sep 2026)**: Fases 0 a 5 implementadas en una primera versión funcional
+> (perfil, días, recomendador, catálogo de 51 ejercicios con video en español, sesión
+> con registro, historial, PWA, exportar/importar). Pendiente: publicar en un hosting
+> HTTPS para instalar en el iPhone, y pulir con uso real.
+
+
 ### Fase 0 – Base (1 día)
 - Crear proyecto Vite + React + TS, Tailwind, Router, Zustand, Vitest.
 - Layout con navegación inferior y páginas vacías.
@@ -240,7 +246,17 @@ Tiempo estimado total de la v1: **2 a 3 semanas** de trabajo parcial.
 - **Videos que dejan de existir**: por eso cada ejercicio tiene también un enlace de búsqueda en YouTube como respaldo.
 - **Consejos de salud**: la app da recomendaciones generales, no médicas. Se incluirá un aviso claro, sobre todo cuando la edad o el IMC salgan de rangos normales.
 - **Idioma**: la UI en español; nombres de ejercicios en español e inglés para que coincidan con las máquinas del gym y con YouTube.
-- **Pendiente de confirmar contigo**:
-  1. ¿Solo para ti o para varios usuarios (esto decide cuándo entra el backend)?
-  2. ¿Prefieres React o algo más ligero como Svelte/Vue?
-  3. ¿Videos en español, inglés, o ambos?
+- **Decisiones confirmadas**:
+  1. La app es de uso personal y se usará desde iOS → PWA instalable desde Safari
+     ("Añadir a pantalla de inicio"), sin backend en v1, datos en el dispositivo.
+  2. React + TypeScript.
+  3. Videos en español. Cada ejercicio lleva un `youtubeId` curado en español y,
+     como respaldo, una búsqueda en YouTube con el nombre en español.
+
+### Notas para iOS
+- Safari en iOS solo instala la PWA si hay `manifest.webmanifest`, `apple-touch-icon`
+  y las metaetiquetas `apple-mobile-web-app-capable` / `status-bar-style`.
+- localStorage en iOS puede borrarse si la app no se abre en 7 días (ITP). Se
+  incluirá "Exportar / Importar datos" (JSON) para respaldo manual.
+- Los iframes de YouTube funcionan en Safari iOS; se usa `playsinline` y
+  `youtube-nocookie.com`.
