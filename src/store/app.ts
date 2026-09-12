@@ -99,7 +99,7 @@ export const useApp = create<AppState>()(
       },
       reiniciar: () => set({ perfil: null, dias: [], excluidos: [], plan: null, historial: [], pesos: [] }),
     }),
-    { name: 'coach-gym-v1' },
+    { name: 'aritagym-v1' },
   ),
 )
 

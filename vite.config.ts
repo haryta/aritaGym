@@ -17,8 +17,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['apple-touch-icon.png', 'icon.svg'],
       manifest: {
-        name: 'Coach Gym',
-        short_name: 'Coach Gym',
+        name: 'aritaGym',
+        short_name: 'aritaGym',
         description: 'Tu entrenador personal: rutinas según tus días, peso y objetivo.',
         lang: 'es',
         theme_color: '#0f172a',

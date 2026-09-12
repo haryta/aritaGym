@@ -1,4 +1,4 @@
-# Coach Gym 🏋️
+# aritaGym 🏋️
 
 Webapp personal que funciona como entrenador: eliges los días que vas al gimnasio,
 das tu peso, edad, nivel y objetivo, y la app arma tu rutina semanal con el nombre
@@ -37,7 +37,7 @@ npm run preview
 Cada push a la rama principal ejecuta `.github/workflows/deploy.yml`, que corre los
 tests, compila con `BASE_PATH=/<repo>/` y publica `dist/` en GitHub Pages:
 
-**https://haryta.github.io/movies/**
+**https://haryta.github.io/aritaGym/**
 
 Si el workflow no puede activar Pages solo, actívalo una vez en
 Settings → Pages → Source: **GitHub Actions**. `dist/404.html` es una copia de
